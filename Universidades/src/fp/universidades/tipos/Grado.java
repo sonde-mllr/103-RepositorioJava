@@ -26,7 +26,7 @@ public class Grado {
 				optativas.stream().allMatch(x->Objects.equals(x.Creditos(),optativas.iterator().next().Creditos())));
 		this.optativas = optativas;
 		Checkers.check("El número de creditos opt entre 0 y total creditos de opt",
-				minCreditosOpt > 0 && minCreditosOpt < optativas.stream().mapToDouble(x->x.Creditos()).sum());
+				minCreditosOpt > 0 && minCreditosOpt <= optativas.stream().mapToDouble(x->x.Creditos()).sum());
 		this.minCreditosOpt = minCreditosOpt;
 	}
 	@Override
