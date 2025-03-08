@@ -15,6 +15,7 @@ public class TestPersona {
 		System.out.println(p1.getEmail());
 		System.out.println(p2);
 		System.out.println(p2.getEmail());
+		Persona p3 = new Persona("45974497E","Alejandro","Martínez González",LocalDate.of(2005, 2, 9));
 	}
 
 }
