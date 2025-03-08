@@ -1,0 +1,21 @@
+package fp.universidades.test;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import fp.universidades.tipos.Asignatura;
+import fp.universidades.tipos.TipoAsignatura;
+
+public class TestGrado {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Asignatura a1 = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		Asignatura a2 = new Asignatura("Tecnología de computadores", "0000340",6.,TipoAsignatura.PRIMER_CUATRIMESTRE, 2);
+		Asignatura a3 = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		Asignatura a4 = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		Set<Asignatura> as1 = new HashSet<Asignatura>();
+		Grado g1 = new Grado("Ingenieria de Computadores",as1);
+	}
+
+}

@@ -1,0 +1,18 @@
+package fp.universidades.test;
+
+import fp.universidades.tipos.Asignatura;
+import fp.universidades.tipos.TipoAsignatura;
+
+public class TestGrado {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Asignatura a1 = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		Asignatura a2 = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		Asignatura a3 = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		Asignatura a4 = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		Set<Asignatura> as1 = new Set<Asignatura>(a1,a2);
+		Grado g1 = new Grado()
+	}
+
+}
