@@ -41,7 +41,7 @@ public record Nota(Asignatura Asignatura,String Curso, TipoConvocatoria Convo, D
 	}
 	
 	public String toString() {
-		return Asignatura + " , " + Curso + " , " +  Convo + " , " + getCalificacion();
+		return Asignatura + " , " + Curso + " , " +  Convo + " , "+ Valor + " , " + getCalificacion();
 	}
 	@Override
 	public int hashCode() {
