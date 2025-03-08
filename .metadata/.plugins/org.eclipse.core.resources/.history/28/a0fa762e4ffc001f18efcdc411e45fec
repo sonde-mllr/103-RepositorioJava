@@ -1,0 +1,26 @@
+package fp.universidades.tipos;
+
+import java.util.Set;
+
+import fp.utiles.Checkers;
+
+public class Grado {
+	private String nombre;
+	private Set<Asignatura> obligatorias;
+	private Set<Asignatura> optativas;
+	//private Integer minCreditosOpt; -> Suma de creditos de las asignaturas optativas
+	//private Integer totalCreditos; -> Creditos deasignaturas obligatorias + minCreditosOpt
+	
+	public String toString() {
+		return nombre;
+	}
+	public Grado(String nombre, Set<Asignatura> obligatorias, Set<Asignatura> optativas) {
+		super();
+		this.nombre = nombre;
+		this.obligatorias = obligatorias;
+		Checkers.check("Todas las asignaturas optativas deben tener el mismo numero de creditos",optativas.stream().allMatch(x->x.equals(x.Creditos());
+		this.optativas = optativas;
+	}
+	
+	
+}

@@ -1,0 +1,59 @@
+package fp.universidades.tipos;
+
+import java.util.Objects;
+import java.util.Set;
+
+import fp.utiles.Checkers;
+
+public class Grado {
+	private String nombre;
+	private Set<Asignatura> obligatorias;
+	private Set<Asignatura> optativas;
+	private Integer minCreditosOpt;
+	//private Integer totalCreditos; -> Creditos deasignaturas obligatorias + minCreditosOpt
+	
+	public String toString() {
+		return nombre;
+	}
+	public Grado(String nombre, Set<Asignatura> obligatorias, Set<Asignatura> optativas,Integer minCreditosOpt) {
+		super();
+		this.nombre = nombre;
+		this.obligatorias = obligatorias;
+		//TODO
+		//Checkers.check("Todas las asignaturas optativas deben tener el mismo numero de creditos",optativas.stream().allMatch(x->x.Creditos()));
+		Checkers.check("Todas las optativas deben tener los mismos créditos",
+				optativas.stream().allMatch(x->x.Creditos()));
+		this.optativas = optativas;
+		Checkers.check("El número de creditos opt entre 0 y total creditos de opt",
+				minCreditosOpt > 0 && minCreditosOpt < optativas.stream().mapToDouble(x->x.Creditos()).sum());
+		this.minCreditosOpt = minCreditosOpt;
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Grado other = (Grado) obj;
+		return Objects.equals(nombre, other.nombre);
+	}
+	
+	public Integer compareTo(Grado c) {
+		int r = nombre.compareTo(c.nombre);
+		return r;
+	}
+	//TODO
+	public Set<Asignatura> getAsignaturas(Integer curso){
+		return null;
+	}
+	//TODO 
+	public Asignatura getAsignaura(String codigo) {
+		return null;
+	}
+}

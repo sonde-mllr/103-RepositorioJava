@@ -1,0 +1,12 @@
+package fp.universidades.tipos;
+
+import java.util.Set;
+
+public class Grado {
+	private String nombre;
+	private Set<Asignatura> obligatorias;
+	private Set<Asignatura> optativas;
+	//private Integer minCreditosOpt; -> Suma de creditos de las asignaturas optativas
+	//private Integer totalCreditos; -> Creditos deasignaturas obligatorias + minCreditosOpt
+	
+}
