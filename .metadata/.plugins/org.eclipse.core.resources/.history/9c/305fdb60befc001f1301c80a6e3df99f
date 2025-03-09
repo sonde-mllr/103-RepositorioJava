@@ -1,0 +1,34 @@
+package fp.universidades.test;
+
+import java.time.LocalDate;
+
+import fp.universidades.tipos.Alumno;
+import fp.universidades.tipos.Asignatura;
+import fp.universidades.tipos.AsignaturaClase;
+import fp.universidades.tipos.TipoAsignatura;
+
+public class TestAlumno {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Alumno al1 = new Alumno("45973397P", "Ale", "Martinez", LocalDate.of(2005, 2, 9), "alemargon1@alum.us.es");
+		System.out.println(al1);
+		Alumno al2 = al1;
+		Alumno al3 = new Alumno("45973396P", "Jesis", "Jaen", LocalDate.of(2004, 3, 14), "jjaeper@alum.us.es");
+		Alumno al4 = new Alumno("45973397P", "Ale", "Martinez", LocalDate.of(2005, 2, 9), "alemargon1@alum.us.es");
+
+		System.out.println(al1.equals(al2));
+		System.out.println(al1.equals(al3));
+		System.out.println(al1.equals(al4));
+
+		System.out.println(al1 == al2);
+		System.out.println(al1 == al3);
+		System.out.println(al1 == al4);
+		
+		AsignaturaClase as1 = new AsignaturaClase("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		Asignatura as1 = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		al1.matriculaAsignatura(null);
+
+	}
+
+}

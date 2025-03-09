@@ -1,0 +1,75 @@
+package fp.universidades.tipos;
+
+import java.time.DayOfWeek;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import fp.utiles.Checkers;
+
+public class Profesor extends Persona{
+	private TipoCategoria categoria;
+	private SortedSet<Tutoria> tutorias;
+	
+	public TipoCategoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(TipoCategoria categoria) {
+		this.categoria = categoria;
+	}
+	public SortedSet<Tutoria> getTutorias() {
+		return tutorias;
+	}
+	public Profesor(String dNI, String nombre, String apellidos, LocalDate fechaNacimiento, String email,
+			TipoCategoria categoria) {
+		super(dNI, nombre, apellidos, fechaNacimiento, email);
+		Checkers.check("Un profesor debe ser mayor de edad",LocalDate.now().getYear() - fechaNacimiento.getYear() >= 18);
+		this.categoria = categoria;
+		this.tutorias = new TreeSet<Tutoria>();
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Objects.hash(categoria);
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Profesor other = (Profesor) obj;
+		return getDNI() == other.getDNI() && getNombre() == other.getNombre() && getApellidos() == other.getApellidos();
+	}
+
+	public int compareTo(Profesor p) {
+		int r = super.compareTo(p);
+		return r;
+	}
+	
+	public String toString() {
+		return super.toString() + " ("+categoria+")";
+	}
+	
+	public void nuevaTutoria(LocalTime hora,Integer duracion,DayOfWeek dia) {
+		tutorias.add(new Tutoria(dia, hora, Duration.ofHours(duracion)));
+	}
+	
+	public void borraTutoria(LocalTime hora,DayOfWeek dia) {
+		tutorias.remove(tutorias.stream().filter(x->x.horaComienzo()== hora && x.dia()==dia).toArray()[0]);
+	}
+	public void borraTutorias() {
+		tutorias.clear();
+	}
+	
+	
+}

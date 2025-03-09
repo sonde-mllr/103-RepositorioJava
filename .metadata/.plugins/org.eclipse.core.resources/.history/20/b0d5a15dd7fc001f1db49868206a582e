@@ -1,0 +1,10 @@
+package fp.universidades.test;
+
+import java.time.LocalDate;
+
+import fp.universidades.tipos.Profesor;
+import fp.universidades.tipos.TipoCategoria;
+
+public class TestProfesor {
+	Profesor p1 = new Profesor("45973397P", "ale", "martinez",LocalDate.of(2005, 2, 9), "c8534312@gmail.com", TipoCategoria.TITULAR);
+}

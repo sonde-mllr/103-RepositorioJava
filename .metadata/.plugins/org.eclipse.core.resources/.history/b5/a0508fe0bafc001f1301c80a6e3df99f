@@ -1,0 +1,17 @@
+package fp.universidades.test;
+
+import java.time.LocalDate;
+
+import fp.universidades.tipos.Alumno;
+
+public class TestAlumno {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Alumno al1 = new Alumno("45973397P", "Ale", "Martinez", LocalDate.of(2005, 2, 9), "alemargon1@alum.us.es");
+		System.out.println(al1);
+		Alumno al2 = al1;
+		
+	}
+
+}

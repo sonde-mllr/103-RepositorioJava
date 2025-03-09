@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Expediente {
+public class Expediente implements Comparable<Expediente>{
 	private List<Nota> notas;
 	// nota media: propiedad derivada
 	
@@ -50,6 +50,12 @@ public class Expediente {
 			cont ++;
 		}
 		return aux/cont;
+	}
+
+	@Override
+	public int compareTo(Expediente o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

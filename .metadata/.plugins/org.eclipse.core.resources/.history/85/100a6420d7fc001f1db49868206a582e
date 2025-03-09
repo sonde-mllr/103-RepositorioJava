@@ -1,0 +1,5 @@
+package fp.universidades.test;
+
+public class TestProfesor {
+	Profesor p1 = new Profesor();
+}

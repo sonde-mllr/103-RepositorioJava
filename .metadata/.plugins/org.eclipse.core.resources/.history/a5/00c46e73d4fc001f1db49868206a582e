@@ -1,0 +1,28 @@
+package fp.universidades.tipos;
+
+import java.time.LocalDate;
+import java.util.SortedSet;
+
+public class Profesor extends Persona{
+	private TipoCategoria categoria;
+	private SortedSet<Tutoria> tutorias;
+	
+	public TipoCategoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(TipoCategoria categoria) {
+		this.categoria = categoria;
+	}
+	public SortedSet<Tutoria> getTutorias() {
+		return tutorias;
+	}
+	public Profesor(String dNI, String nombre, String apellidos, LocalDate fechaNacimiento, String email,
+			TipoCategoria categoria) {
+		super(dNI, nombre, apellidos, fechaNacimiento, email);
+		this.categoria = categoria;
+		this.tutorias = new TreeSet<Tutoria>();
+	}
+	
+	
+	
+}

@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import fp.utiles.Checkers;
 
-public class Espacio {
+public class Espacio implements Comparable<Espacio>{
 	private TipoEspacio espacio;
 	private String nombre;
 	private Integer capacidad;
@@ -42,10 +42,10 @@ public class Espacio {
 	}
 
 	public String getPlanta() {
-		return "planta " + getNombre().charAt(1);
+		return "Planta " + getNombre().charAt(1);
 	}
 	public String toString() {
-		return nombre + getPlanta();
+		return nombre + " "+ getPlanta();
 	}
 
 	@Override
@@ -64,7 +64,7 @@ public class Espacio {
 		Espacio other = (Espacio) obj;
 		return Objects.equals(nombre, other.nombre) && Objects.equals(getPlanta(), other.getPlanta());
 	}
-	public int CompareTo(Espacio o) {
+	public int compareTo(Espacio o) {
 		int r = getPlanta().compareTo(o.getPlanta());
 		if(r==0) {
 			r = getNombre().compareTo(o.getNombre());

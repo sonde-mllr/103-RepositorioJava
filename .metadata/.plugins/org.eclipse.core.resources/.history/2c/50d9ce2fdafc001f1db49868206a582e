@@ -1,0 +1,20 @@
+package fp.universidades.tipos;
+
+import java.util.Set;
+
+public class Despacho extends Espacio{
+
+	private Set<Profesor> profesores;
+
+	public Set<Profesor> getProfesores() {
+		return profesores;
+	}
+
+	public void setProfesores(Set<Profesor> profesores) {
+		Checkers.check("El numero de profesores no puede superar la capacidad del despacho",)
+		this.profesores = profesores;
+	}
+	
+	
+	
+}

@@ -1,0 +1,5 @@
+package fp.universidades.tipos;
+
+public class Despacho {
+
+}

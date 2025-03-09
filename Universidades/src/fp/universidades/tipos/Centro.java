@@ -1,12 +1,13 @@
 package fp.universidades.tipos;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 import fp.utiles.Checkers;
 
-public class Centro {
+public class Centro implements Comparable<Centro>{
 	private String nombre;
 	private String direccion;
 	private Integer plantas;
@@ -25,15 +26,15 @@ public class Centro {
 		this.sotanos = sotanos;
 		this.espacios = new HashSet<Espacio>();
 	}
-	void nuevoEspacio(Espacio e) {
-		Integer numPlanta = Integer.valueOf(e.getPlanta().charAt(8));
-		if(!(-sotanos < numPlanta && numPlanta < plantas-1)){
+	public void nuevoEspacio(Espacio e) {
+		Integer numPlanta = Integer.valueOf(e.getPlanta().charAt(7));
+		if((-sotanos < numPlanta && numPlanta < plantas-1)){
 			throw new IllegalArgumentException("La planta del espacio debe estar comprendido en el intervalo de sotanos y plantas del centro");
 		} else {
 			this.espacios.add(e);
 		}
 	}
-	void eliminaEspacio(Espacio e) {
+	public void eliminaEspacio(Espacio e) {
 		if(espacios.contains(e)) {
 			espacios.remove(e);
 		}
@@ -74,7 +75,7 @@ public class Centro {
 		return nombre;
 	}
 	
-	public Integer compareTo(Centro c) {
+	public int compareTo(Centro c) {
 		Integer r = nombre.compareTo(c.nombre);
 		return r;
 	}
@@ -88,7 +89,7 @@ public class Centro {
 		return null;
 	}
 	//TODO
-	public Set<Despacho> getDespacos(Departamento d){
+	public Set<Despacho> getDespachos(Departamento d){
 		return null;
 	}
 	//TODO
@@ -101,7 +102,7 @@ public class Centro {
 	}
 	//TODO
 	public Espacio getEspacioMayorCapacidad() {
-		return null;
+		return espacios.stream().sorted(Comparator.comparingInt(x->x.getCapacidad())).toList().getLast();
 	}
 	
 }

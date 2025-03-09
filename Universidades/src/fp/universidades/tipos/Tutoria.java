@@ -1,19 +1,19 @@
 package fp.universidades.tipos;
 
+import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Objects;
 
 import fp.utiles.Checkers;
-import fp.utiles.DiaDeLaSemana;
 
-public record Tutoria(DiaDeLaSemana dia,LocalTime horaComienzo,LocalTime horaFin){
+public record Tutoria(DayOfWeek dia,LocalTime horaComienzo,LocalTime horaFin) implements Comparable<Tutoria>{
 	public Tutoria{		
 		Duration duracion = Duration.between(horaComienzo, horaFin);
 		Checkers.check("La duracion debe ser almenos 15 minutos", duracion.compareTo(Duration.ofMinutes(15))>= 0);
-		Checkers.check("No puede ser sabado ni domingo", !(dia.equals(DiaDeLaSemana.SABADO)) && !(dia.equals(DiaDeLaSemana.DOMINGO)));
+		Checkers.check("No puede ser sabado ni domingo", !(dia.equals(DayOfWeek.SATURDAY)) && !(dia.equals(DayOfWeek.SUNDAY)));
 	}
-	public Tutoria(DiaDeLaSemana dia,LocalTime inicio,Duration duracion) {
+	public Tutoria(DayOfWeek dia,LocalTime inicio,Duration duracion) {
 		this(dia,inicio,calcularFin(inicio,duracion));
 	} 
 	public static LocalTime calcularFin(LocalTime inicio,Duration duracion) {

@@ -1,0 +1,45 @@
+package fp.universidades.tipos;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import fp.utiles.Checkers;
+
+public class Despacho extends Espacio{
+
+
+	private Set<Profesor> profesores;
+
+	public Despacho(String nombre, Integer capacidad,Set<Profesor> profesores) {
+		super(TipoEspacio.OTRO, nombre, capacidad);
+		this.profesores = profesores;
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Despacho(String nombre,Integer capacidad,Profesor profesor) {
+		super(TipoEspacio.OTRO,nombre,capacidad);
+		this.profesores = Set.of(profesor);
+	}
+	
+	public Despacho(String nombre,Integer capacidad) {
+		super(TipoEspacio.OTRO,nombre,capacidad);
+		this.profesores= new HashSet<>();
+	}
+	
+	public Set<Profesor> getProfesores() {
+		return profesores;
+	}
+
+	public void setProfesores(Set<Profesor> profesores) {
+		Checkers.check("El numero de profesores no puede superar la capacidad del despacho",profesores.size() < getCapacidad());
+		this.profesores = profesores;
+	}
+	
+	@Override
+	public void setEspacio(TipoEspacio espacio){
+		throw new UnsupportedOperationException("No se puede cambiar el tipo, debe ser 'otro tipo");
+	}
+	
+	
+	
+}

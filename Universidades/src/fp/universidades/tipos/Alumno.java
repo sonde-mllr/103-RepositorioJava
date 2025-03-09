@@ -7,7 +7,7 @@ import java.util.Set;
 
 import fp.utiles.Checkers;
 
-public class Alumno extends Persona {
+public class Alumno extends Persona{
 	private Set<Asignatura> asignaturas;
 	//TODO
 	// Curso del alumno: propiedad derivada de la asignatura de curso mayor o 0 si no está matriculado
@@ -42,7 +42,7 @@ public class Alumno extends Persona {
 	}
 	
 	//TODO no se si es correcto
-	public Integer compareTo(Alumno o) {
+	public int compareTo(Alumno o) {
 		return super.compareTo(o);
 	}
 	

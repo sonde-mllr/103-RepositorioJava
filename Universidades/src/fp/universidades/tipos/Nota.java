@@ -12,7 +12,7 @@ import fp.utiles.Checkers;
 	private Boolean honor;
  * */
 
-public record Nota(Asignatura Asignatura,Integer Curso, TipoConvocatoria Convo, Double Valor, Boolean Honor) {
+public record Nota(Asignatura Asignatura,Integer Curso, TipoConvocatoria Convo, Double Valor, Boolean Honor) implements Comparable<Nota>{
 	
 	public Nota{
 		Checkers.check("Nota no válida", Valor >= 0. && Valor <= 10.);

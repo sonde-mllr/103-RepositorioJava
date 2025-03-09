@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import fp.utiles.Checkers;
 
-public record Asignatura(String Nombre,String Codigo,Double Creditos,TipoAsignatura Tipo,Integer curso){
+public record Asignatura(String Nombre,String Codigo,Double Creditos,TipoAsignatura Tipo,Integer curso)implements Comparable<Asignatura>{
 	public Asignatura{
 		Checkers.check("El código debe tener 7 dígitos", Codigo.length() == 7);
 	}

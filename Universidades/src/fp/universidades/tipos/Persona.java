@@ -6,7 +6,7 @@ import java.util.Objects;
 
 import fp.utiles.Checkers;
 
-public class Persona {
+public class Persona implements Comparable<Persona>{
 	private String DNI;
 	private String nombre;
 	private String apellidos;

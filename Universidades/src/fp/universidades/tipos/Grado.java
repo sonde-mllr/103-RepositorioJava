@@ -5,7 +5,7 @@ import java.util.Set;
 
 import fp.utiles.Checkers;
 
-public class Grado {
+public class Grado implements Comparable<Grado> {
 	private String nombre;
 	private Set<Asignatura> obligatorias;
 	private Set<Asignatura> optativas;
@@ -45,7 +45,7 @@ public class Grado {
 		return Objects.equals(nombre, other.nombre);
 	}
 	
-	public Integer compareTo(Grado c) {
+	public int compareTo(Grado c) {
 		int r = nombre.compareTo(c.nombre);
 		return r;
 	}
