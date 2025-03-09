@@ -12,7 +12,7 @@ import fp.utiles.Checkers;
 	private Boolean honor;
  * */
 
-public record Nota(Asignatura Asignatura,String Curso, TipoConvocatoria Convo, Double Valor, Boolean Honor) {
+public record Nota(Asignatura Asignatura,Integer Curso, TipoConvocatoria Convo, Double Valor, Boolean Honor) {
 	
 	public Nota{
 		Checkers.check("Nota no válida", Valor >= 0. && Valor <= 10.);
@@ -20,7 +20,7 @@ public record Nota(Asignatura Asignatura,String Curso, TipoConvocatoria Convo, D
 			Checkers.check("No se puede tener matricula si la nota es menor a 9", Valor >= 9.);
 		}
 	}
-	public Nota(Asignatura asignatura,String curso,TipoConvocatoria convo,Double valor){
+	public Nota(Asignatura asignatura,Integer curso,TipoConvocatoria convo,Double valor){
 		this(asignatura,curso,convo,valor,false);
 		Checkers.check("Nota no válida", valor >= 0. && valor <= 10.);
 	}
