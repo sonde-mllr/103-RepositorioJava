@@ -12,4 +12,8 @@
     <fullyQualifiedTypeName name="java.lang.UnsupportedOperationException"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="fp.universidades.tipos.TipoEspacio"/>
+    <fullyQualifiedTypeName name="fp.utils.Checkers"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="fp.sevici.tipos.UnidadMedida"/>
+    <fullyQualifiedTypeName name="fp.sevici.tipos.Coordenadas"/>
 </qualifiedTypeNameHistroy>
