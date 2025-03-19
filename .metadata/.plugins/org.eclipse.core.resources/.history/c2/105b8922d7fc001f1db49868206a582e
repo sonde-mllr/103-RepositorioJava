@@ -1,7 +1,0 @@
-package fp.universidades.test;
-
-import fp.universidades.tipos.Profesor;
-
-public class TestProfesor {
-	Profesor p1 = new Profesor(45973397P, "ale", "martinez", , null, null);
-}
