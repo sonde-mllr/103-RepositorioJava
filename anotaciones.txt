@@ -1,7 +1,7 @@
-Hacer desde LAB-Trenes (Donde me quedé), antes de la parte 4 de universidades. Hasta Netflix y Nobel (Antes del jueves que viene)
+Hacer desde la parte 4 de universidades. Hasta Netflix y Nobel (Antes del jueves que viene)
 
 	[ 14 - 05 - 2025 ]
 
-		- Trenes
+		- Parte 4
 
-
+# Extra: Preguntar al profesor por correo si en el examen práctico va a ser necesario crear una clase Ficheros para leerlos o nos vendrá con el examen

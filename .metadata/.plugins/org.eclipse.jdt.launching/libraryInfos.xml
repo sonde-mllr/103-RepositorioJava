@@ -13,6 +13,18 @@
         </endorsedDirs>
     </libraryInfo>
     <libraryInfo home="/snap/eclipse/120/usr/lib/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_21.0.6.v20250130-0529/jre" version="21.0.6"/>
+    <libraryInfo home="C:\Users\ale\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916" version="21.0.7">
+        <bootpath>
+            <entry path="null"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="null"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="null"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="C:\Users\ale\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre" version="21.0.7"/>
     <libraryInfo home="/snap/eclipse/115/usr/lib/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_21.0.5.v20241023-1957" version="21.0.5">
         <bootpath>
             <entry path="null"/>

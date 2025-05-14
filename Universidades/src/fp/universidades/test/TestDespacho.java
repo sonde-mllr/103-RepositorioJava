@@ -18,6 +18,9 @@ public class TestDespacho {
 		System.out.println(d1);
 		System.out.println(d1.getCapacidad());
 		System.out.println(d1.getProfesores());
+		Despacho d2 = new Despacho("F1.43,1,3");
+		System.out.println(d2);
+		System.out.println(d2.getCapacidad());
 	}
 
 }

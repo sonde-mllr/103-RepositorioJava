@@ -17,6 +17,15 @@ public class Espacio implements Comparable<Espacio>{
 		this.capacidad = capacidad;
 	}
 	
+	public Espacio(String s) {
+		String[] s1 = s.split(",");
+		
+		nombre = s1[0].strip();
+		// La planta la puse como una propiedad derivada del nombre
+		this.capacidad = Integer.valueOf(s1[2].strip());
+		this.espacio = TipoEspacio.valueOf(s1[3].strip());
+	}
+	
 	public TipoEspacio getEspacio() {
 		return espacio;
 	}
@@ -43,6 +52,10 @@ public class Espacio implements Comparable<Espacio>{
 
 	public String getPlanta() {
 		return "Planta " + getNombre().charAt(1);
+	}
+	
+	public Integer getPlantaINT() {
+		return Integer.valueOf(getNombre().charAt(1));
 	}
 	public String toString() {
 		return nombre + " "+ getPlanta();

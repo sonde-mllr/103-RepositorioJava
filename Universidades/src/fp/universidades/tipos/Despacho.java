@@ -27,6 +27,15 @@ public class Despacho extends Espacio{
 		this.profesores= new HashSet<>();
 	}
 	
+    public Despacho(String s) {
+        super(
+            TipoEspacio.OTRO,
+            s.split(",")[0].strip(),
+            Integer.parseInt(s.split(",")[2].strip())
+        );
+        this.profesores = new HashSet<>();
+    }
+	
 	public Set<Profesor> getProfesores() {
 		return profesores;
 	}
