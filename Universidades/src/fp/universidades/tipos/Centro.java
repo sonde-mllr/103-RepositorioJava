@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import fp.universidades.tipos.Despacho;
 
 import fp.utiles.Checkers;
 
@@ -81,16 +82,55 @@ public class Centro implements Comparable<Centro>{
 	}
 	
 	//TODO
+	@SuppressWarnings("null")
 	public Integer[] getConteosEspacios() {
-		return null;
+		Integer[] res = null;
+		for(Espacio e : espacios) {
+			switch (e.getEspacio()) {
+			case TipoEspacio.TEORIA: {
+				res[0]++;
+			}
+			case TipoEspacio.LABORATORIO:{
+				res[1]++;
+			}
+			case TipoEspacio.SEMINARIO: {
+				res[2]++;
+			}
+			case TipoEspacio.EXAMEN:{
+				res[3]++;
+			}
+			case TipoEspacio.OTRO:{
+				res[4]++;
+			}
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + e.getEspacio());
+			}
+		}
+		return res;
 	}
 	//TODO
-	public Set<Despacho> getDespachos(){
-		return null;
+	public Set<Despacho> getDespachos() {
+		Set<Despacho> despachos = new HashSet<Despacho>();
+		for(Espacio e : espacios) {
+			if(e instanceof Despacho){
+				despachos.add((Despacho) e);
+			}
+		}
+		return despachos;
 	}
 	//TODO
 	public Set<Despacho> getDespachos(Departamento d){
-		return null;
+		Set<Despacho> despachos = new HashSet<Despacho>();
+		for(Espacio e : espacios) {
+			if(e instanceof Despacho){
+				for(Profesor p: ((Despacho) e).getProfesores()) {
+					if(d.Profesores().contains(p)) {
+						despachos.add((Despacho) e);
+					}
+				}
+			}
+		}
+		return despachos;
 	}
 	//TODO
 	public Set<Profesor> getProfesores(){

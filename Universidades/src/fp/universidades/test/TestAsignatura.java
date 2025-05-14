@@ -12,6 +12,7 @@ public class TestAsignatura {
 		Asignatura r = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
 		System.out.println(asignatura1);
 		System.out.println(r);
+		System.out.println(r.getAcronimo());
 	}
 
 }

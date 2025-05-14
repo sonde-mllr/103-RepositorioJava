@@ -30,4 +30,15 @@ public record Asignatura(String Nombre,String Codigo,Double Creditos,TipoAsignat
 		int r = Codigo.compareTo(o.Codigo);
 		return r;
 	}
+	
+	public String getAcronimo() {
+		String res = "";
+		for(int i = 0; i< this.Nombre().length() ; i++) {
+			Character caracter = this.Nombre().charAt(i);
+			if(Character.isUpperCase(caracter)) {
+				res += caracter;
+			}
+		}
+		return res;
+	}
 }

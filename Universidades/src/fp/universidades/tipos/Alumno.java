@@ -1,7 +1,9 @@
 package fp.universidades.tipos;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Set;
 
@@ -48,7 +50,7 @@ public class Alumno extends Persona{
 	
 	//TODO
 	public Integer getCurso() {
-		return null;
+		return this.getAsignaturas().stream().map(x->x.curso()).max(Comparator.naturalOrder()).orElseThrow(() -> new NoSuchElementException("No hay cursos"));
 	}
 	
 	public String toString() {

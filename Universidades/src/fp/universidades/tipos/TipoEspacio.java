@@ -1,5 +1,5 @@
 package fp.universidades.tipos;
 
 public enum TipoEspacio {
-	TEORIA,LAB,SEMINARIO,EXAMEN,OTRO;
+	TEORIA,LABORATORIO,SEMINARIO,EXAMEN,OTRO;
 }
