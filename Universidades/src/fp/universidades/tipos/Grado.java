@@ -1,7 +1,9 @@
 package fp.universidades.tipos;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import fp.utiles.Checkers;
 
@@ -54,13 +56,18 @@ public class Grado implements Comparable<Grado> {
 		return minCreditosOpt+obligatorias.stream().mapToDouble(x->x.Creditos()).sum();
 	}
 	
-	//TODO
 	public Set<Asignatura> getAsignaturas(Integer curso){
-		return null;
+		Set<Asignatura> asignaturas = new HashSet<Asignatura>();
+		asignaturas.addAll(getObligatorias());
+		asignaturas.addAll(getOptativas());
+		return asignaturas.stream().filter(x->x.curso() == curso).collect(Collectors.toSet());
 	}
-	//TODO 
-	public Asignatura getAsignaura(String codigo) {
-		return null;
+	public Asignatura getAsignatura(String codigo) {
+		Set<Asignatura> asignaturas = new HashSet<Asignatura>();
+		asignaturas.addAll(getObligatorias());
+		asignaturas.addAll(getOptativas());
+		Asignatura res = asignaturas.stream().filter(x->x.Codigo().equals(codigo)).findFirst().orElse(null);
+		return res;
 	}
 	
 	public String getNombre() {

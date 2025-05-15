@@ -32,6 +32,9 @@ public class TestGrado {
 		System.out.println("Total Creditos " +g1.getTotalCreditos());
 		System.out.println("Asignaturas obligatorias: " + g1.getObligatorias());
 		System.out.println("Asignatuas optativas : " +g1.getOptativas());
+		System.out.println("getAsignaturas: "+ g1.getAsignaturas(1));
+		System.out.println("getAsignatura: "+ g1.getAsignatura("0000300"));
+	
 	}
 
 }
