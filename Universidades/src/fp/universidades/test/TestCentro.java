@@ -18,7 +18,7 @@ public class TestCentro {
 		Espacio e1 = new Espacio(TipoEspacio.OTRO,"A1.30",30 );
 		Espacio e2 = new Espacio(TipoEspacio.LABORATORIO,"B2.10",10 );
 		Espacio e3 = new Espacio(TipoEspacio.OTRO,"B1.3",1 );
-		Profesor p1 = new Profesor("45973397P", "ale", "martinez",LocalDate.of(2005, 2, 9), "c8534312@gmail.com", TipoCategoria.TITULAR);
+		Profesor p1 = new Profesor("04573397P", "ale", "martinez",LocalDate.of(2005, 2, 9), "c8534312@gmail.com", TipoCategoria.TITULAR);
 		Profesor p2 = new Profesor("12384128S", "jesus", "jaén",LocalDate.of(2004, 4, 13), "jjaeper@gmail.com", TipoCategoria.TITULAR);
 		Profesor p3 = new Profesor("12312387D", "olivia", "bautista",LocalDate.of(2005, 3, 2), "obaubau@gmail.com", TipoCategoria.TITULAR);
 		Despacho d1 = new Despacho("Despacho1", 3, Set.of(p1,p2,p3));
@@ -31,6 +31,7 @@ public class TestCentro {
 		System.out.println(c1.getEspacios());
 		System.out.println(c1.getEspacioMayorCapacidad());
 		System.out.println(c1.getDespachos());
+		System.out.println(c1.getDespachosPorProfesor());
 	}
 
 }

@@ -4,6 +4,9 @@ import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -13,9 +16,10 @@ import fp.utiles.Checkers;
 public class Profesor extends Persona{
 	private TipoCategoria categoria;
 	private SortedSet<Tutoria> tutorias;
+	private Map<Asignatura,Double> creditosAsignaturas;
 	
 	public TipoCategoria getCategoria() {
-		return categoria;
+		return this.categoria;
 	}
 	public void setCategoria(TipoCategoria categoria) {
 		this.categoria = categoria;
@@ -29,6 +33,7 @@ public class Profesor extends Persona{
 		Checkers.check("Un profesor debe ser mayor de edad",LocalDate.now().getYear() - fechaNacimiento.getYear() >= 18);
 		this.categoria = categoria;
 		this.tutorias = new TreeSet<Tutoria>();
+		this.creditosAsignaturas = new HashMap<Asignatura,Double>();
 	}
 	@Override
 	public int hashCode() {
@@ -69,5 +74,36 @@ public class Profesor extends Persona{
 		tutorias.clear();
 	}
 	
+	public List<Asignatura> getAsignaturas(){
+		return this.creditosAsignaturas.keySet().stream().toList();
+	}
+	
+	public List<Double> getCreditos() {
+		return this.creditosAsignaturas.values().stream().toList();
+	}
+	
+	public void imparteAsignatura(Asignatura a,Double c) {
+		Checkers.check("La dedicación no puede ser 0 o menos", c > 0);
+		Checkers.check("No puede superar el numero de creditos de la asignatura", a.Creditos() > c);
+		Checkers.check("El total de creditos que imparte no puede superar 24", this.getCreditos().stream().mapToDouble(Double::doubleValue).sum() <= 24);
+		this.creditosAsignaturas.put(a, c);
+	}
+	
+	public void eliminaAsignatura(Asignatura a) {
+		if(this.creditosAsignaturas.containsKey(a)) {
+			this.creditosAsignaturas.remove(a);			
+		}
+	}
+	
+	public Double dedicacionAsignatura(Asignatura a) {
+		if(!this.creditosAsignaturas.containsKey(a)) {
+			return 0.0;
+		}
+		return this.creditosAsignaturas.get(a);
+	}
+	
+	public Double getDedicacionTotal() {
+		return this.creditosAsignaturas.entrySet().stream().map(x->x.getValue()).mapToDouble(Double::doubleValue).sum();
+	}
 	
 }

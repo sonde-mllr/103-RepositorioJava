@@ -13,6 +13,8 @@ public class TestAsignatura {
 		System.out.println(asignatura1);
 		System.out.println(r);
 		System.out.println(r.getAcronimo());
+		
+
 	}
 
 }

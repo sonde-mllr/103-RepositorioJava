@@ -4,7 +4,11 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import fp.universidades.tipos.Despacho;
+import java.util.SortedMap;
+import java.util.SortedSet;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import fp.utiles.Checkers;
 
@@ -108,7 +112,6 @@ public class Centro implements Comparable<Centro>{
 		}
 		return res;
 	}
-	//TODO
 	public Set<Despacho> getDespachos() {
 		Set<Despacho> despachos = new HashSet<Despacho>();
 		for(Espacio e : espacios) {
@@ -118,7 +121,6 @@ public class Centro implements Comparable<Centro>{
 		}
 		return despachos;
 	}
-	//TODO
 	public Set<Despacho> getDespachos(Departamento d){
 		Set<Despacho> despachos = new HashSet<Despacho>();
 		for(Espacio e : espacios) {
@@ -132,17 +134,28 @@ public class Centro implements Comparable<Centro>{
 		}
 		return despachos;
 	}
-	//TODO
+	
 	public Set<Profesor> getProfesores(){
-		return null;
+		return this.getDespachos().stream().flatMap(x->x.getProfesores().stream()).collect(Collectors.toSet());
+
 	}
-	//TODO
 	public Set<Profesor> getProfesores(Departamento d){
-		return null;
+		return this.getDespachos(d).stream().flatMap(x->x.getProfesores().stream()).collect(Collectors.toSet());
 	}
-	//TODO
 	public Espacio getEspacioMayorCapacidad() {
 		return espacios.stream().sorted(Comparator.comparingInt(x->x.getCapacidad())).toList().getLast();
+	}
+	
+	public SortedMap<String,Despacho> getDespachosPorProfesor(){
+		SortedMap<String,Despacho> res = new TreeMap<String, Despacho>();
+		for (Profesor p : this.getProfesores()) {			
+			for (Despacho d: this.getDespachos()) {
+				if(d.getProfesores().contains(p)){
+					res.put(p.toString(), d);
+				}
+			}
+		}
+		return res;
 	}
 	
 }
