@@ -4,4 +4,4 @@ Hacer desde la parte 4 de universidades. Hasta Netflix y Nobel (Antes del jueves
 
 		- Parte 4 - Falta el getAsignatura de Grado
 
-Preguntar al profesor por correo si en el examen práctico va a ser necesario crear una clase Ficheros para leerlos o nos vendrá con el examen
+- Preguntar al profesor por correo si en el examen práctico va a ser necesario crear una clase Ficheros para leerlos o nos vendrá con el examen
