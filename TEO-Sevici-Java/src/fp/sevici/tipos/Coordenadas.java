@@ -82,9 +82,10 @@ public class Coordenadas {
 		return null;
 	}
 	public Coordenadas aRadianes() {
-		if(this.unidad != UnidadMedida.RADIANES) {
-			return new Coordenadas()
+		if(this.unidad == UnidadMedida.RADIANES) {
+			return null;
 		}
+		return new Coordenadas();
 	}
 	
 }
