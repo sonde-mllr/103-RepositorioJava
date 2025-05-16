@@ -3,9 +3,13 @@ package fp.universidades.tipos;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 import fp.utiles.Checkers;
 
@@ -92,6 +96,15 @@ public class Alumno extends Persona{
 		} else {
 			expediente.nuevaNota(new Nota(a,curso,convocatoria,notaValor,honor));
 		}
+	}
+	
+	public SortedMap<Asignatura,TipoNota> getCalificacionPorAsignatura(){
+		Map<Asignatura,TipoNota> res = this.getExpediente().getNotas().stream().collect(Collectors.toMap(x->x.Asignatura(), x->x.getCalificacion()));
+		return new TreeMap<Asignatura,TipoNota>(res);
+	}
+	
+	public Map<Integer,Integer> getNumAsignaturasPorCurso(){
+		return this.getAsignaturas().stream().collect(Collectors.groupingBy(x->x.curso(),Collectors.collectingAndThen(Collectors.counting(),Long::intValue)));
 	}
 	
 	

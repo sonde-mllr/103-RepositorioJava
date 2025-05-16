@@ -1,8 +1,12 @@
 package fp.universidades.tipos;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import fp.utiles.Checkers;
@@ -83,5 +87,20 @@ public class Grado implements Comparable<Grado> {
 		return minCreditosOpt;
 	}
 	
+	public SortedMap<Asignatura,Double> getCreditosPorAsignatura(){
+		Set<Asignatura> asignaturas = new HashSet<Asignatura>();
+		asignaturas.addAll(this.optativas);
+		asignaturas.addAll(this.obligatorias);
+		Map<Asignatura,Double> res = asignaturas.stream().collect(Collectors.toMap(Function.identity(),x->x.Creditos()));
+		return new TreeMap<Asignatura,Double>(res);
+		
+	}
+	
+	public Map<Integer,Double> getTotalCreditosPorCurso(){
+		Set<Asignatura> asignaturas = new HashSet<Asignatura>();
+		asignaturas.addAll(this.optativas);
+		asignaturas.addAll(this.obligatorias);
+		return asignaturas.stream().collect(Collectors.toMap(Asignatura::curso,x->x.Creditos(),(cred1,cred2) -> {return cred1+cred2;}));
+	}
 	
 }

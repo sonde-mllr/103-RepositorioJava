@@ -12,9 +12,12 @@ public class TestGrado {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Asignatura a1 = new Asignatura("Fundamentos de Programacion", "0000230",12.,TipoAsignatura.ANUAL, 1);
+		
 		Asignatura a2 = new Asignatura("Tecnología de computadores", "0000340",6.,TipoAsignatura.PRIMER_CUATRIMESTRE, 2);
 		Asignatura a3 = new Asignatura("Matematicas discretas", "0000310",6.,TipoAsignatura.SEGUNDO_CUATRIMESTRE, 2);
+		
 		Asignatura a4 = new Asignatura("Administracion de empresas", "0000210",6.,TipoAsignatura.PRIMER_CUATRIMESTRE, 1);
+		
 		Asignatura a5 = new Asignatura("Arquitectura de computadores", "0000350",6.,TipoAsignatura.SEGUNDO_CUATRIMESTRE, 2);
 		Asignatura a6 = new Asignatura("ISSI", "0000300",12.,TipoAsignatura.ANUAL, 2);
 
@@ -34,6 +37,8 @@ public class TestGrado {
 		System.out.println("Asignatuas optativas : " +g1.getOptativas());
 		System.out.println("getAsignaturas: "+ g1.getAsignaturas(1));
 		System.out.println("getAsignatura: "+ g1.getAsignatura("0000300"));
+		System.out.println(g1.getCreditosPorAsignatura());
+		System.out.println(g1.getTotalCreditosPorCurso());
 	
 	}
 

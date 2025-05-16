@@ -12,6 +12,10 @@ public class Expediente implements Comparable<Expediente>{
 		return notas.toString();
 	}
 	
+	public List<Nota> getNotas() {
+		return notas;
+	}
+
 	public Expediente() {
 		this.notas = new ArrayList<Nota>();
 	}
