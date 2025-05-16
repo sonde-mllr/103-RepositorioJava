@@ -3,9 +3,13 @@ Hacer desde la parte 4 de universidades. Hasta Netflix y Nobel (Antes del jueves
 	[ 14 - 05 - 2025 ]
 
 		- Parte 4 - Falta el getAsignatura de Grado
+
 	[ 15 - 05 - 2025 ]
 		- Parte 4 - Terminada
 		- Parte 5 - Hasta Grados
+
+	[ 16 - 05 - 2025 ]
+		- Parte 5 - Terminada
 
 Preguntar al profesor por correo si en el examen práctico va a ser necesario crear una clase Ficheros para leerlos o nos vendrá con el examen
 
