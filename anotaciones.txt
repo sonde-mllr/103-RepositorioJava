@@ -6,6 +6,8 @@ Hacer desde la parte 4 de universidades. Hasta Netflix y Nobel (Antes del jueves
 	[ 15 - 05 - 2025 ]
 		- Parte 4 - Terminada
 		- Parte 5 - Hasta Grados
+	[ 16 - 05 - 2025]
+		- Universidades acabado
 
 Preguntar al profesor por correo si en el examen práctico va a ser necesario crear una clase Ficheros para leerlos o nos vendrá con el examen
 
