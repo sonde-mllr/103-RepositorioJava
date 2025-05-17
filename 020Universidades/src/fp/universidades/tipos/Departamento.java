@@ -85,4 +85,5 @@ public record Departamento(String Nombre, Set<Profesor> Profesores,Set<Asignatur
 		return this.Profesores().stream().collect(Collectors.toMap(x->x.toString(),x->x.getTutorias(),(set1, set2) -> { set1.addAll(set2);return set1;},TreeMap::new));
 	}
 	
+	
 }

@@ -57,6 +57,14 @@ public class Persona implements Comparable<Persona>{
 		this.apellidos = apellidos;
 	}
 
+	public LocalDate getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -65,14 +73,6 @@ public class Persona implements Comparable<Persona>{
 		this.email = email;
 	}
 
-	public LocalDate getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-
-	public void setFechaNacimiento(LocalDate fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
-	}
-	
 	public Integer getEdad() {
 		return LocalDate.now().getYear() - fechaNacimiento.getYear();
 	}
