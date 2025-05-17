@@ -8,7 +8,10 @@ Hacer desde la parte 4 de universidades. Hasta Netflix y Nobel (Antes del jueves
 		- Parte 5 - Hasta Grados
 	[ 16 - 05 - 2025]
 		- Universidades acabado
+		- Vinos: No lo voy a hacer por bucles	
 
 Preguntar al profesor por correo si en el examen práctico va a ser necesario crear una clase Ficheros para leerlos o nos vendrá con el examen
 
 Cuando utilizar un if o una restricción. Si me ponen condiciones en un método que debo utilizar, if,Checkers o try - catch
+
+Importarnte aprender a hacer Ficheros.java (readalllines)
